@@ -2,35 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Audio Player Demo</title>
+  <title>My Audio Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f5f5f5;
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .audio-container {
-      margin-bottom: 20px;
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f4f4f4, #eaeaea);
+      color: #333;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #2c3e50;
+    }
+
+    .audio-gallery {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .audio-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .audio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .audio-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #34495e;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    @media (min-width: 600px) {
+      .audio-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>My Audio Samples</h1>
 
-  <div class="audio-container">
-    <h3>Sample Audio 1</h3>
-    <audio controls>
-      <source src="sample1.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
+  <h1>🎵 My Audio Gallery</h1>
 
-  <div class="audio-container">
-    <h3>Sample Audio 2</h3>
-    <audio controls>
-      <source src="sample2.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+  <div class="audio-gallery">
+
+    <div class="audio-card">
+      <h3>Sample Audio 1</h3>
+      <audio controls>
+        <source src="sample1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <div class="audio-card">
+      <h3>Sample Audio 2</h3>
+      <audio controls>
+        <source src="sample2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <!-- Add more audio-card blocks as needed -->
+
   </div>
 
 </body>
